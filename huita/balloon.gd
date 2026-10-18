@@ -70,8 +70,11 @@ var mutation_cooldown: Timer = Timer.new()
 ## Indicator to show that player can progress dialogue.
 @onready var progress: Polygon2D = %Progress
 
+# Ссылка на AudioStreamPlayer
+@onready var typing_sound: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready() -> void:
+	dialogue_label.spoke.connect(_on_spoke)
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
@@ -98,6 +101,11 @@ func _unhandled_input(_event: InputEvent) -> void:
 	# Only the balloon is allowed to handle input while it's showing
 	if will_block_other_input:
 		get_viewport().set_input_as_handled()
+
+func _on_spoke(letter: String, _index: int, _speed: float) -> void:
+	# Не играем звук на пробелах, чтобы не было лишнего шума
+	if letter.strip_edges() != "":
+		typing_sound.play()
 
 
 func _notification(what: int) -> void:

@@ -2,6 +2,9 @@ extends State
 
 class_name IdleState
 
+#signal transitioned 
+
+
 var state_name : String = "Idle"
 
 var play_char : CharacterBody3D
@@ -37,8 +40,8 @@ func physics_update(delta : float):
 	
 func applies(delta : float):
 	#manage the appliements of things that needs to be set/checked/performed every frame
-	if play_char.hit_ground_cooldown > 0.0: play_char.hit_ground_cooldown -= delta
-	if play_char.jump_cooldown > 0.0: play_char.jump_cooldown -= delta
+#	if play_char.hit_ground_cooldown > 0.0: play_char.hit_ground_cooldown -= delta
+#	if play_char.jump_cooldown > 0.0: play_char.jump_cooldown -= delta
 	
 	#manage the appliements and state transitions that needs to be sets/checked/performed
 	#every time the play char pass through one of the following : floor-inair-onwall
@@ -53,13 +56,11 @@ func applies(delta : float):
 	
 func input_management():
 	#manage the state transitions depending on the actions inputs
-	if Input.is_action_just_pressed(play_char.jump_action):
-		if play_char.jump_cooldown <= 0.0:
-			transitioned.emit(self, "JumpState")
-		
+	if Input.is_action_just_pressed(play_char.jump_action):	
+		if play_char.jump_cooldown <= 0.0:	
+			transitioned.emit(self, "JumpState")		
 	if Input.is_action_just_pressed(play_char.crouch_action):
-		transitioned.emit(self, "CrouchState")
-		
+		transitioned.emit(self, "CrouchState")		
 	if Input.is_action_just_pressed(play_char.run_action):
 		if play_char.walk_or_run == "WalkState": play_char.walk_or_run = "RunState"
 		elif play_char.walk_or_run == "RunState": play_char.walk_or_run = "WalkState"

@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="Astheneia"
-run/main_scene="res://scene.tscn"
+run/main_scene="uid://b24xcqjt8ysx4"
 config/features=PackedStringArray("4.7", "Forward Plus")
+
+[audio]
+
+buses/default_bus_layout=""
 
 [autoload]
 
@@ -25,8 +29,9 @@ runtime/balloon_path="uid://dxtnpka5r812k"
 
 [display]
 
-window/size/viewport_width=1920
+window/size/viewport_width=1480
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

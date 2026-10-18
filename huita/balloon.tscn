@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dxtnpka5r812k"]
 
-[ext_resource type="Script" uid="uid://uyts20q7npq" path="res://huita/balloon.gd" id="1_36de5"]
+[ext_resource type="Script" uid="uid://xjgfbnx68w1j" path="res://huita/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="AudioStream" uid="uid://bg1nwc1661pso" path="res://resources/psx-horror-sfx-free/WAV/menus/cursor_01.wav" id="4_ldgsu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 content_margin_left = 20.0
@@ -202,6 +203,7 @@ text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1162558754]
 unique_name_in_owner = true
+stream = ExtResource("4_ldgsu")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/CenterContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

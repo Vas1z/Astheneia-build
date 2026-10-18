@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cefqvmc7oyvsn" path="res://resources/- Classic 64 Asset Pack 0.6/Floor/Materials/carpet_darkgray_02.jpg" id="2_t7tip"]
 [ext_resource type="Texture2D" uid="uid://bqdcx0dnbjb5f" path="res://resources/- Classic 64 Asset Pack 0.6/Ground/Materials/ice_04.jpg" id="3_tv015"]
-[ext_resource type="Texture2D" uid="uid://bplvh1gphaafv" path="res://- Classic 64 Asset Pack 0.6/Road/Materials/road_01.png" id="3_wnojy"]
-[ext_resource type="Texture2D" uid="uid://46m4y172tugc" path="res://- Classic 64 Asset Pack 0.6/Floor/Materials/carpet_darkgray_01.png" id="4_wnojy"]
-[ext_resource type="Texture2D" uid="uid://b12mrjw36j1sh" path="res://- Classic 64 Asset Pack 0.6/Walls/Materials/wall_plaster_pealing.png" id="5_vkp31"]
+[ext_resource type="Texture2D" uid="uid://bplvh1gphaafv" path="res://resources/- Classic 64 Asset Pack 0.6/Road/Materials/road_01.png" id="3_wnojy"]
+[ext_resource type="Texture2D" uid="uid://46m4y172tugc" path="res://resources/- Classic 64 Asset Pack 0.6/Floor/Materials/carpet_darkgray_01.png" id="4_wnojy"]
+[ext_resource type="Texture2D" uid="uid://b12mrjw36j1sh" path="res://resources/- Classic 64 Asset Pack 0.6/Walls/Materials/wall_plaster_pealing.png" id="5_vkp31"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
 size = Vector3(2.3545089, 0.001, 10.072205)
@@ -77,6 +77,6 @@ material_override = SubResource("StandardMaterial3D_d4pc4")
 mesh = SubResource("BoxMesh_bhunq")
 
 [node name="tratuar" type="MeshInstance3D" parent="." unique_id=1975332249]
-transform = Transform3D(333.99338, 0, 0, 0, 1, 0, 0, 0, 3.2200003, -25.350227, -0.90000004, 365.3045)
+transform = Transform3D(162.56505, 0, 0, 0, 1, 0, 0, 0, 3.2200003, -25.350227, -0.90000004, 365.3045)
 material_override = SubResource("StandardMaterial3D_eprha")
 mesh = SubResource("PlaneMesh_eprha")

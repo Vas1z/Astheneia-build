@@ -1,0 +1,777 @@
+{
+ "atlas": 2048,
+ "atlas_used": 128,
+ "fps": 30,
+ "props": [
+  {
+   "name": "ground_grass",
+   "title": "Churchyard Grass",
+   "group": "ground",
+   "place": "floor",
+   "note": "dark tufted grass, 4 x 4 m: two cells each way",
+   "tris": 40,
+   "size": [
+    4.0,
+    4.0,
+    0.05
+   ],
+   "min": [
+    -2.0,
+    -2.0,
+    -0.05
+   ],
+   "max": [
+    2.0,
+    2.0,
+    0.0
+   ],
+   "parts": [
+    {
+     "name": "ground_grass",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 40,
+     "min": [
+      -2.0,
+      -2.0,
+      -0.05
+     ],
+     "max": [
+      2.0,
+      2.0,
+      0.0
+     ]
+    }
+   ],
+   "anims": []
+  },
+  {
+   "name": "path_gravel",
+   "title": "Gravel Path",
+   "group": "ground",
+   "place": "floor",
+   "note": "grey gravel, 2 x 2 m: lay it a cell wide",
+   "tris": 16,
+   "size": [
+    2.0,
+    2.0,
+    0.05
+   ],
+   "min": [
+    -1.0,
+    -1.0,
+    -0.05
+   ],
+   "max": [
+    1.0,
+    1.0,
+    0.0
+   ],
+   "parts": [
+    {
+     "name": "path_gravel",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 16,
+     "min": [
+      -1.0,
+      -1.0,
+      -0.05
+     ],
+     "max": [
+      1.0,
+      1.0,
+      0.0
+     ]
+    }
+   ],
+   "anims": []
+  },
+  {
+   "name": "wall_stone",
+   "title": "Churchyard Wall",
+   "group": "walls",
+   "place": "floor",
+   "note": "rubble stone under a saddleback coping; 2 m, 1.8 m",
+   "tris": 44,
+   "size": [
+    2.0,
+    0.57,
+    1.98
+   ],
+   "min": [
+    -1.0,
+    -0.285,
+    0.0
+   ],
+   "max": [
+    1.0,
+    0.285,
+    1.98
+   ],
+   "parts": [
+    {
+     "name": "wall_stone",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 44,
+     "min": [
+      -1.0,
+      -0.285,
+      0.0
+     ],
+     "max": [
+      1.0,
+      0.285,
+      1.98
+     ]
+    }
+   ],
+   "anims": []
+  },
+  {
+   "name": "wall_stone_ivy",
+   "title": "Ivied Churchyard Wall",
+   "group": "walls",
+   "place": "floor",
+   "note": "ivy over both faces and its top",
+   "tris": 476,
+   "size": [
+    2.596,
+    0.748,
+    2.109
+   ],
+   "min": [
+    -1.265,
+    -0.392,
+    0.0
+   ],
+   "max": [
+    1.331,
+    0.356,
+    2.109
+   ],
+   "parts": [
+    {
+     "name": "wall_stone_ivy",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 476,
+     "min": [
+      -1.2655,
+      -0.3917,
+      0.0
+     ],
+     "max": [
+      1.3305,
+      0.3565,
+      2.1093
+     ]
+    }
+   ],
+   "anims": []
+  },
+  {
+   "name": "wall_stone_wicket",
+   "title": "Churchyard Wall, Wicket",
+   "group": "walls",
+   "place": "floor",
+   "note": "a 1.1 m opening between two piers: fits the wicket gate",
+   "tris": 232,
+   "size": [
+    2.0,
+    0.68,
+    3.0
+   ],
+   "min": [
+    -1.0,
+    -0.34,
+    0.0
+   ],
+   "max": [
+    1.0,
+    0.34,
+    3.0
+   ],
+   "parts": [
+    {
+     "name": "wall_stone_wicket",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 116,
+     "min": [
+      -1.0,
+      -0.34,
+      0.0
+     ],
+     "max": [
+      -0.5,
+      0.34,
+      3.0
+     ]
+    },
+    {
+     "name": "wall_stone_wicket_1",
+     "parent": "wall_stone_wicket",
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 116,
+     "min": [
+      0.5,
+      -0.34,
+      0.0
+     ],
+     "max": [
+      1.0,
+      0.34,
+      3.0
+     ]
+    }
+   ],
+   "anims": []
+  },
+  {
+   "name": "pier_stone",
+   "title": "Wall Pier",
+   "group": "walls",
+   "place": "floor",
+   "note": "ashlar, a ball on its cap: where the walls meet",
+   "tris": 110,
+   "size": [
+    0.72,
+    0.72,
+    2.76
+   ],
+   "min": [
+    -0.36,
+    -0.36,
+    0.0
+   ],
+   "max": [
+    0.36,
+    0.36,
+    2.76
+   ],
+   "parts": [
+    {
+     "name": "pier_stone",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 110,
+     "min": [
+      -0.36,
+      -0.36,
+      0.0
+     ],
+     "max": [
+      0.36,
+      0.36,
+      2.76
+     ]
+    }
+   ],
+   "anims": []
+  },
+  {
+   "name": "gate_wicket",
+   "title": "Wicket Gate",
+   "group": "gates",
+   "place": "floor",
+   "note": "one iron leaf for the 1.1 m wicket; swings in at a use",
+   "tris": 440,
+   "size": [
+    1.11,
+    0.066,
+    1.694
+   ],
+   "min": [
+    -0.56,
+    -0.04,
+    0.04
+   ],
+   "max": [
+    0.55,
+    0.026,
+    1.734
+   ],
+   "parts": [
+    {
+     "name": "gate_wicket",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 12,
+     "min": [
+      0.51,
+      -0.025,
+      0.94
+     ],
+     "max": [
+      0.55,
+      0.025,
+      1.06
+     ]
+    },
+    {
+     "name": "gate_wicket_leaf",
+     "parent": "gate_wicket",
+     "pivot": [
+      -0.53,
+      0.0,
+      0.0
+     ],
+     "tris": 428,
+     "min": [
+      -0.56,
+      -0.04,
+      0.04
+     ],
+     "max": [
+      0.5325,
+      0.026,
+      1.7338
+     ]
+    }
+   ],
+   "anims": [
+    {
+     "name": "open",
+     "seconds": 2.0,
+     "loop": false
+    }
+   ],
+   "use": {
+    "kind": "switch",
+    "clip": "open"
+   }
+  },
+  {
+   "name": "lamp_post",
+   "title": "Gas Lamp",
+   "group": "lamps",
+   "place": "floor",
+   "note": "an iron post, its lantern lit at 3 m",
+   "tris": 218,
+   "size": [
+    0.6,
+    0.35,
+    3.29
+   ],
+   "min": [
+    -0.3,
+    -0.175,
+    0.0
+   ],
+   "max": [
+    0.3,
+    0.175,
+    3.29
+   ],
+   "parts": [
+    {
+     "name": "lamp_post",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 218,
+     "min": [
+      -0.3,
+      -0.175,
+      0.0
+     ],
+     "max": [
+      0.3,
+      0.175,
+      3.29
+     ]
+    }
+   ],
+   "anims": []
+  },
+  {
+   "name": "tomb_chest",
+   "title": "Chest Tomb",
+   "group": "tombs",
+   "place": "floor",
+   "note": "sandstone, PIKE on its sides, 2 x 1 m; its slab slides aside at a use",
+   "tris": 264,
+   "size": [
+    2.06,
+    1.141,
+    0.97
+   ],
+   "min": [
+    -1.03,
+    -0.505,
+    0.0
+   ],
+   "max": [
+    1.03,
+    0.636,
+    0.97
+   ],
+   "parts": [
+    {
+     "name": "tomb_chest",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 252,
+     "min": [
+      -1.03,
+      -0.505,
+      0.0
+     ],
+     "max": [
+      1.03,
+      0.6358,
+      0.85
+     ]
+    },
+    {
+     "name": "tomb_chest_lid",
+     "parent": "tomb_chest",
+     "pivot": [
+      0.0,
+      0.0,
+      0.85
+     ],
+     "tris": 12,
+     "min": [
+      -1.02,
+      -0.495,
+      0.85
+     ],
+     "max": [
+      1.02,
+      0.495,
+      0.97
+     ]
+    }
+   ],
+   "anims": [
+    {
+     "name": "open",
+     "seconds": 2.8,
+     "loop": false
+    }
+   ],
+   "use": {
+    "kind": "switch",
+    "clip": "open"
+   }
+  },
+  {
+   "name": "celtic_cross",
+   "title": "Ringed Cross",
+   "group": "monuments",
+   "place": "floor",
+   "note": "granite, 2 m, its ring round the crossing",
+   "tris": 180,
+   "size": [
+    0.8,
+    0.8,
+    2.0
+   ],
+   "min": [
+    -0.4,
+    -0.4,
+    0.0
+   ],
+   "max": [
+    0.4,
+    0.4,
+    2.0
+   ],
+   "parts": [
+    {
+     "name": "celtic_cross",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 180,
+     "min": [
+      -0.4,
+      -0.4,
+      0.0
+     ],
+     "max": [
+      0.4,
+      0.4,
+      2.0
+     ]
+    }
+   ],
+   "anims": []
+  },
+  {
+   "name": "headstone_shoulder",
+   "title": "Sandstone Headstone",
+   "group": "monuments",
+   "place": "floor",
+   "note": "a cross over EDITH MARLOWE, 1851 - 1889",
+   "tris": 32,
+   "size": [
+    0.55,
+    0.155,
+    1.054
+   ],
+   "min": [
+    -0.275,
+    -0.054,
+    -0.083
+   ],
+   "max": [
+    0.275,
+    0.101,
+    0.971
+   ],
+   "parts": [
+    {
+     "name": "headstone_shoulder",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 32,
+     "min": [
+      -0.275,
+      -0.0541,
+      -0.0825
+     ],
+     "max": [
+      0.275,
+      0.1007,
+      0.9713
+     ]
+    }
+   ],
+   "anims": []
+  },
+  {
+   "name": "headstone_military",
+   "title": "War Grave",
+   "group": "monuments",
+   "place": "floor",
+   "note": "white, rounded, a cross cut in it",
+   "tris": 40,
+   "size": [
+    0.42,
+    0.08,
+    0.85
+   ],
+   "min": [
+    -0.21,
+    -0.04,
+    -0.08
+   ],
+   "max": [
+    0.21,
+    0.04,
+    0.77
+   ],
+   "parts": [
+    {
+     "name": "headstone_military",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 40,
+     "min": [
+      -0.21,
+      -0.04,
+      -0.08
+     ],
+     "max": [
+      0.21,
+      0.04,
+      0.77
+     ]
+    }
+   ],
+   "anims": []
+  },
+  {
+   "name": "headstone_child",
+   "title": "Child's Headstone",
+   "group": "monuments",
+   "place": "floor",
+   "note": "small, a lamb over OUR LITTLE ROSE",
+   "tris": 40,
+   "size": [
+    0.36,
+    0.113,
+    0.504
+   ],
+   "min": [
+    -0.18,
+    -0.071,
+    -0.083
+   ],
+   "max": [
+    0.18,
+    0.042,
+    0.421
+   ],
+   "parts": [
+    {
+     "name": "headstone_child",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 40,
+     "min": [
+      -0.18,
+      -0.0715,
+      -0.0827
+     ],
+     "max": [
+      0.18,
+      0.0418,
+      0.4215
+     ]
+    }
+   ],
+   "anims": []
+  },
+  {
+   "name": "grave_kerbed",
+   "title": "Kerbed Grave",
+   "group": "monuments",
+   "place": "floor",
+   "note": "granite kerbs round white chippings, 1 x 2 m, a vase of dead flowers",
+   "tris": 178,
+   "size": [
+    1.02,
+    2.0,
+    0.7
+   ],
+   "min": [
+    -0.51,
+    -1.0,
+    0.0
+   ],
+   "max": [
+    0.51,
+    1.0,
+    0.7
+   ],
+   "parts": [
+    {
+     "name": "grave_kerbed",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 178,
+     "min": [
+      -0.51,
+      -1.0,
+      0.0
+     ],
+     "max": [
+      0.51,
+      1.0,
+      0.7
+     ]
+    }
+   ],
+   "anims": []
+  },
+  {
+   "name": "cross_wood",
+   "title": "Wooden Cross",
+   "group": "monuments",
+   "place": "floor",
+   "note": "a pauper's grave: a weathered cross over a sunk mound",
+   "tris": 68,
+   "size": [
+    1.0,
+    2.055,
+    1.202
+   ],
+   "min": [
+    -0.5,
+    -0.055,
+    -0.104
+   ],
+   "max": [
+    0.5,
+    2.0,
+    1.098
+   ],
+   "parts": [
+    {
+     "name": "cross_wood",
+     "parent": null,
+     "pivot": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "tris": 68,
+     "min": [
+      -0.5,
+      -0.055,
+      -0.1036
+     ],
+     "max": [
+      0.5,
+      2.0,
+      1.0982
+     ]
+    }
+   ],
+   "anims": []
+  }
+ ]
+}

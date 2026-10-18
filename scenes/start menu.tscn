@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b24xcqjt8ysx4"]
+
+[ext_resource type="Script" uid="uid://dvgds1ofsk3et" path="res://scenes/start menu.gd" id="1_avrsr"]
+
+[node name="Control" type="Control" unique_id=652041512]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1)
+script = ExtResource("1_avrsr")
+
+[node name="Button" type="Button" parent="." unique_id=142312778]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 207.00002
+offset_right = 155.0
+offset_bottom = 238.00002
+scale = Vector2(19.414618, 23.219488)
+text = "НАЧАТЬ"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

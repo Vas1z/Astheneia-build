@@ -30,11 +30,11 @@ func physics_update(delta : float) -> void:
 	wall_check()
 	
 func applies(delta : float) -> void:
+	pass
 	if !play_char.is_on_floor(): 
 		if play_char.jump_cooldown > 0.0: play_char.jump_cooldown -= delta
 		if play_char.coyote_jump_cooldown > 0.0: play_char.coyote_jump_cooldown -= delta
-		if play_char.walljump_lock_in_air_movement_time > 0.0: play_char.walljump_lock_in_air_movement_time -= delta
-		
+		if play_char.walljump_lock_in_air_movement_time > 0.0: play_char.walljump_lock_in_air_movement_time -= delta		
 	if play_char.is_on_floor():
 		if play_char.jump_buff_on: 
 			play_char.buffered_jump = true
@@ -48,6 +48,7 @@ func applies(delta : float) -> void:
 			else: transitioned.emit(self, "IdleState")
 		
 func input_management() -> void:
+	pass
 	if Input.is_action_just_pressed(play_char.jump_action):
 		#check if can jump buffer
 		if play_char.floor_check.is_colliding() and play_char.last_frame_position.y > play_char.position.y and play_char.nb_jumps_in_air_allowed <= 0: play_char.jump_buff_on = true
@@ -56,12 +57,10 @@ func input_management() -> void:
 			play_char.coyote_jump_on = true
 			transitioned.emit(self, "JumpState")
 		if play_char.jump_cooldown <= 0.0:
-			transitioned.emit(self, "JumpState")
-		
+			transitioned.emit(self, "JumpState")		
 	if Input.is_action_just_pressed(play_char.dash_action):
 		if play_char.time_bef_can_dash_again <= 0.0 and play_char.nb_dashs_allowed > 0:
-			transitioned.emit(self, "DashState")
-		
+			transitioned.emit(self, "DashState")		
 	if Input.is_action_just_pressed(play_char.fly_action):
 		transitioned.emit(self, "FlyState")
 		
@@ -70,6 +69,7 @@ func input_management() -> void:
 			play_char.slide_buff_on = true
 			
 func wall_check() -> void:
+	pass
 	if play_char.can_wallrun and (!play_char.is_on_floor() or play_char.is_on_wall()) and !play_char.wallrun_floor_check.is_colliding():
 		if play_char.left_wall_check.is_colliding() and !play_char.right_wall_check.is_colliding() and \
 		play_char.last_wallrunned_wall_out_of_time != -1:
@@ -82,8 +82,7 @@ func wall_check() -> void:
 			play_char.last_wallrunned_wall_out_of_time = 0
 			transitioned.emit(self, "WallrunState")
 		else:
-			return
-			
+			return			
 func move(delta : float) -> void:
 	play_char.input_direction = Input.get_vector(play_char.move_left_action, play_char.move_right_action, play_char.move_forward_action, play_char.move_backward_action)
 	play_char.move_direction = (play_char.cam_holder.global_basis * Vector3(play_char.input_direction.x, 0.0, play_char.input_direction.y)).normalized()
@@ -102,12 +101,12 @@ func move(delta : float) -> void:
 				play_char.velocity.x = lerp(play_char.velocity.x, play_char.move_direction.x * contrd_des_move_speed, contrd_in_air_move_speed * delta)
 				play_char.velocity.z = lerp(play_char.velocity.z, play_char.move_direction.z * contrd_des_move_speed, contrd_in_air_move_speed * delta)
 				
-		if !play_char.move_direction and play_char.has_dashed:
-			#if play char dash, and drop input direction key, need to reset velocity to her pre dash self, to ensure that play char won't keep dash velocity after transitioning to inair state
-			play_char.has_dashed = false
-			var velocity_tween : Tween = create_tween()
-			velocity_tween.tween_method(func(v): play_char.velocity = v, play_char.velocity, Vector3(play_char.velocity_pre_dash.x, 0.0, play_char.velocity_pre_dash.z), 0.12)
-			play_char.velocity_pre_dash = Vector3.ZERO
-			velocity_tween.finished.connect(Callable(velocity_tween, "kill"))
+#		if !play_char.move_direction and play_char.has_dashed:
+#			#if play char dash, and drop input direction key, need to reset velocity to her pre dash self, to ensure that play char won't keep dash velocity after transitioning to inair state
+#			play_char.has_dashed = false
+#			var velocity_tween : Tween = create_tween()
+#			velocity_tween.tween_method(func(v): play_char.velocity = v, play_char.velocity, Vector3(play_char.velocity_pre_dash.x, 0.0, play_char.velocity_pre_dash.z), 0.12)
+#			play_char.velocity_pre_dash = Vector3.ZERO
+#			velocity_tween.finished.connect(Callable(velocity_tween, "kill"))
 			
 			

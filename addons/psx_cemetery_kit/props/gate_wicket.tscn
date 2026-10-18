@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/psx_cemetery_kit/models/gate_wicket_model.glb" id="1"]
+[ext_resource type="Script" path="res://addons/psx_cemetery_kit/machine.gd" id="2"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.0400, 0.1200, 0.0500)
+
+[sub_resource type="BoxShape3D" id="box1"]
+size = Vector3(1.0925, 1.6938, 0.0660)
+
+[node name="gate_wicket" instance=ExtResource("1")]
+script = ExtResource("2")
+kind = "switch"
+clip = "open"
+
+[node name="Collision" type="StaticBody3D" parent="gate_wicket"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_wicket/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5300, 1.0000, -0.0000)
+shape = SubResource("box0")
+
+[node name="Collision" type="StaticBody3D" parent="gate_wicket/gate_wicket_leaf"]
+
+[node name="Box" type="CollisionShape3D" parent="gate_wicket/gate_wicket_leaf/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5162, 0.8869, 0.0070)
+shape = SubResource("box1")

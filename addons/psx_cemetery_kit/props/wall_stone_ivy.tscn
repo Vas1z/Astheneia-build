@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/psx_cemetery_kit/models/wall_stone_ivy_model.glb" id="1"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(2.5960, 2.1093, 0.7482)
+
+[node name="wall_stone_ivy" instance=ExtResource("1")]
+
+[node name="Collision" type="StaticBody3D" parent="wall_stone_ivy"]
+
+[node name="Box" type="CollisionShape3D" parent="wall_stone_ivy/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0325, 1.0547, 0.0176)
+shape = SubResource("box0")

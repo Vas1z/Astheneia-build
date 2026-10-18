@@ -1,6 +1,5 @@
-[gd_scene format=3 uid="uid://djjnp7uo7pyo6"]
+[gd_scene format=3 uid="uid://bb17t4480ddsu"]
 
-[ext_resource type="Script" uid="uid://bvjeyx7fspyov" path="res://balloon.gd" id="1_0l650"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="1_oo6ya"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_235ry"]
@@ -89,7 +88,6 @@ MarginContainer/constants/margin_top = 4
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_i6nbm")
 
 [node name="simple baloon" type="CanvasLayer" unique_id=1338157251]
-script = ExtResource("1_0l650")
 
 [node name="Balloon" type="Control" parent="." unique_id=1745792452]
 unique_name_in_owner = true

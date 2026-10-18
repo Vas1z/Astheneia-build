@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/psx_cemetery_kit/models/headstone_child_model.glb" id="1"]
+
+[sub_resource type="BoxShape3D" id="box0"]
+size = Vector3(0.3600, 0.5042, 0.1133)
+
+[node name="headstone_child" instance=ExtResource("1")]
+
+[node name="Collision" type="StaticBody3D" parent="headstone_child"]
+
+[node name="Box" type="CollisionShape3D" parent="headstone_child/Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0000, 0.1694, 0.0148)
+shape = SubResource("box0")

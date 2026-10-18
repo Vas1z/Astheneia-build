@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 class_name PlayerCharacter
 
+
+
 @export_group("Movement variables")
 var move_speed: float
 var move_accel: float

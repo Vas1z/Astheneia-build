@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cm57dxga6svw8"
+path="res://.godot/imported/wall_stone.obj-0794fb856dc0981dbf597418d5be049a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_stone.obj-0794fb856dc0981dbf597418d5be049a.mesh"]
+
+source_file="res://resources/wall_stone.obj"
+dest_files=["res://.godot/imported/wall_stone.obj-0794fb856dc0981dbf597418d5be049a.mesh", "res://.godot/imported/wall_stone.obj-0794fb856dc0981dbf597418d5be049a.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
