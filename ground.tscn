@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bk0t4c664wq4r"]
 
-[ext_resource type="Texture2D" uid="uid://cefqvmc7oyvsn" path="res://resources/- Classic 64 Asset Pack 0.6/Floor/Materials/carpet_darkgray_02.jpg" id="2_t7tip"]
 [ext_resource type="Texture2D" uid="uid://bqdcx0dnbjb5f" path="res://resources/- Classic 64 Asset Pack 0.6/Ground/Materials/ice_04.jpg" id="3_tv015"]
 [ext_resource type="Texture2D" uid="uid://bplvh1gphaafv" path="res://resources/- Classic 64 Asset Pack 0.6/Road/Materials/road_01.png" id="3_wnojy"]
 [ext_resource type="Texture2D" uid="uid://46m4y172tugc" path="res://resources/- Classic 64 Asset Pack 0.6/Floor/Materials/carpet_darkgray_01.png" id="4_wnojy"]
@@ -9,14 +8,11 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
 size = Vector3(2.3545089, 0.001, 10.072205)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tv015"]
-albedo_texture = ExtResource("2_t7tip")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_bhunq"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnojy"]
 albedo_texture = ExtResource("3_tv015")
 uv1_scale = Vector3(200, 200, 200)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bhunq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkp31"]
 albedo_texture = ExtResource("3_wnojy")
@@ -49,13 +45,8 @@ transform = Transform3D(53.16318, 0, 0, 0, 1, 0, 0, 0, 88.085266, -1, 0, 0)
 transform = Transform3D(2.855264, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -0.32645026, -0.00049999356, 0.46566847)
 shape = SubResource("BoxShape3D_bhunq")
 
-[node name="MeshInstance3D399" type="MeshInstance3D" parent="." unique_id=296038867]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 55.11413, -1, 16)
-material_override = SubResource("StandardMaterial3D_tv015")
-mesh = SubResource("PlaneMesh_bhunq")
-
 [node name="MeshInstance3D157" type="MeshInstance3D" parent="." unique_id=150074896]
-transform = Transform3D(170.9148, 0, 0, 0, 1, 0, 0, 0, 407.4405, -17.895508, -1, 63.825195)
+transform = Transform3D(170.9148, 0, 0, 0, 1, 0, 0, 0, 126.75644, -17.895508, -1, 321.11)
 material_override = SubResource("StandardMaterial3D_wnojy")
 mesh = SubResource("PlaneMesh_bhunq")
 

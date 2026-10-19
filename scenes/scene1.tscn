@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://tdmxalfws58n" path="res://exit_area.gd" id="8_4gngc"]
 [ext_resource type="PackedScene" uid="uid://bw5uaq62g380g" path="res://addons/psx_cemetery_kit/models/celtic_cross_model.glb" id="9_k2ng3"]
 [ext_resource type="Script" uid="uid://b4d85oa5chbra" path="res://shepherd.gd" id="10_lfno2"]
+[ext_resource type="Texture2D" uid="uid://bye56f3p88eup" path="res://resources/- Classic 64 Asset Pack 0.6/Water/water_waves.png" id="11_ug83y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y2354"]
 shader = ExtResource("1_f1jql")
@@ -29,6 +30,7 @@ background_color = Color(0.5705783, 0.57057834, 0.57057834, 1)
 sky = SubResource("Sky_at0wf")
 fog_enabled = true
 fog_light_energy = 1.54
+fog_height = -19.32
 fog_height_density = 16.0
 fog_depth_begin = 0.0
 fog_depth_end = 95.3
@@ -43,7 +45,7 @@ volumetric_fog_detail_spread = 6.0
 volumetric_fog_ambient_inject = 1.4
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhunq"]
-size = Vector3(36.19922, 0.001, 111.28363)
+size = Vector3(47.858154, 0.001, 111.28363)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_at0wf"]
 albedo_texture = ExtResource("4_rayba")
@@ -65,13 +67,13 @@ bottom_radius = 0.1821289
 height = 2.6032715
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6f8o3"]
-size = Vector3(37.685944, 5.4052734, 9.895355)
+size = Vector3(7.4790535, 5.4052734, 3.4302883)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qr0ht"]
-size = Vector3(58.070007, 5.4347534, 3.1973877)
+size = Vector3(71.12631, 5.4347534, 3.1973877)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1esiv"]
-size = Vector3(1, 3.375122, 61.678093)
+size = Vector3(1, 3.375122, 97.813324)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2r0jt"]
 size = Vector3(13.975708, 2.4160767, 1)
@@ -104,6 +106,14 @@ albedo_color = Color(0.86065835, 3.200695e-06, 8.663535e-07, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6f8o3"]
 size = Vector3(0.18341064, 0.18713379, 2.2329102)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qr0ht"]
+size = Vector3(1, 6.9434814, 0.63653564)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rayba"]
+albedo_texture = ExtResource("11_ug83y")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bhunq"]
 
 [node name="cemetery" type="Node3D" unique_id=1822494164]
 
@@ -187,11 +197,11 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.915, -0.995, 0)
 mesh_library = ExtResource("3_ug83y")
 data = {
-"cells": PackedInt32Array(3, 65531, 0, 3, 65530, 0, 3, 65529, 0, 3, 65528, 0, 3, 65527, 0, 3, 65526, 0, 3, 65525, 0, 3, 65524, 0, 3, 65532, 0, 3, 65533, 0, 3, 65534, 0, 3, 65535, 0, 3, 0, 0, 3, 1, 0, 3, 2, 0, 3, 3, 0, 3, 4, 0, 3, 5, 0, 3, 6, 0, 3, 7, 0, 3, 8, 0, 3, 9, 0, 3, 10, 0, 2, 3, 0, 1, 3, 0, 0, 3, 0, 65535, 3, 0, 65534, 3, 0, 65533, 3, 0, 2, 65534, 0, 1, 65534, 0, 0, 65534, 0, 65535, 65534, 0, 65534, 65534, 0, 65533, 65534, 0, 4, 65534, 0, 5, 65534, 0, 6, 65534, 0, 7, 65534, 0, 8, 65534, 0, 9, 65534, 0, 10, 65534, 0, 4, 3, 0, 5, 3, 0, 6, 3, 0, 7, 3, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 10, 7, 0, 2, 7, 0, 1, 7, 0, 0, 7, 0, 65535, 7, 0, 65534, 7, 0, 65533, 7, 0, 2, 65527, 0, 1, 65527, 0, 0, 65527, 0, 65535, 65527, 0, 65534, 65527, 0, 65533, 65527, 0, 3, 65523, 0, 3, 65521, 0, 3, 65520, 0, 3, 65519, 0, 3, 65518, 0, 3, 65516, 0, 3, 65517, 0, 3, 65515, 0, 3, 65514, 0, 3, 65513, 0, 3, 65512, 0, 3, 65511, 0, 3, 65510, 0, 3, 65509, 0, 3, 65508, 0, 3, 65507, 0, 3, 65506, 0, 3, 65505, 0, 3, 65504, 0, 3, 65503, 0, 3, 65502, 0, 3, 65501, 0, 3, 65500, 0, 3, 65499, 0, 3, 65498, 0, 3, 65522, 0, 11, 65534, 0, 65532, 65534, 0, 65532, 3, 0, 11, 3, 0, 12, 3, 0, 3, 11, 0, 11, 7, 0, 65532, 7, 0, 8, 65517, 0, 8, 65516, 0, 9, 65517, 0, 9, 65516, 0, 7, 65517, 0, 7, 65516, 0, 8, 65515, 0, 8, 65514, 0, 9, 65515, 0, 7, 65514, 0, 7, 65513, 1441792, 7, 65512, 0, 6, 65512, 0, 6, 65511, 0, 5, 65511, 0, 4, 65511, 0, 4, 65510, 0, 5, 65510, 0, 4, 65509, 0, 4, 65508, 0, 5, 65509, 0, 6, 65510, 0, 7, 65511, 0, 8, 65513, 0, 9, 65514, 0, 6, 65514, 0, 7, 65515, 0, 8, 65518, 0, 10, 65517, 0, 10, 65516, 0, 4, 65512, 0, 5, 65512, 0, 4, 65513, 1441792, 6, 65513, 1441792, 5, 65513, 1441792, 4, 65514, 1441792, 4, 65515, 1441792, 2, 65528, 1441792)
+"cells": PackedInt32Array(3, 65531, 0, 3, 65530, 0, 3, 65529, 0, 3, 65528, 0, 3, 65527, 0, 3, 65526, 0, 3, 65525, 0, 3, 65524, 0, 3, 65532, 0, 3, 65533, 0, 3, 65534, 0, 3, 65535, 0, 3, 0, 0, 3, 1, 0, 3, 2, 0, 3, 3, 0, 3, 4, 0, 3, 5, 0, 3, 6, 0, 3, 7, 0, 3, 8, 0, 3, 9, 0, 3, 10, 0, 2, 3, 0, 1, 3, 0, 0, 3, 0, 65535, 3, 0, 65534, 3, 0, 65533, 3, 0, 2, 65534, 0, 1, 65534, 0, 0, 65534, 0, 65535, 65534, 0, 65534, 65534, 0, 65533, 65534, 0, 4, 65534, 0, 5, 65534, 0, 6, 65534, 0, 7, 65534, 0, 8, 65534, 0, 9, 65534, 0, 10, 65534, 0, 4, 3, 0, 5, 3, 0, 6, 3, 0, 7, 3, 0, 8, 3, 0, 9, 3, 0, 10, 3, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 10, 7, 0, 2, 7, 0, 1, 7, 0, 0, 7, 0, 65535, 7, 0, 65534, 7, 0, 65533, 7, 0, 2, 65527, 0, 1, 65527, 0, 0, 65527, 0, 65535, 65527, 0, 65534, 65527, 0, 65533, 65527, 0, 3, 65523, 0, 3, 65521, 0, 3, 65520, 0, 3, 65519, 0, 3, 65518, 0, 3, 65516, 0, 3, 65517, 0, 3, 65515, 0, 3, 65514, 0, 3, 65513, 0, 3, 65512, 0, 3, 65511, 0, 3, 65510, 0, 3, 65509, 0, 3, 65508, 0, 3, 65507, 0, 3, 65506, 0, 3, 65505, 0, 3, 65522, 0, 11, 65534, 0, 65532, 65534, 0, 65532, 3, 0, 11, 3, 0, 12, 3, 0, 3, 11, 0, 11, 7, 0, 65532, 7, 0, 8, 65517, 0, 8, 65516, 0, 9, 65517, 0, 9, 65516, 0, 7, 65517, 0, 7, 65516, 0, 8, 65515, 0, 8, 65514, 0, 9, 65515, 0, 7, 65514, 0, 7, 65513, 1441792, 7, 65512, 0, 6, 65512, 0, 6, 65511, 0, 5, 65511, 0, 4, 65511, 0, 4, 65510, 0, 5, 65510, 0, 4, 65509, 0, 4, 65508, 0, 5, 65509, 0, 6, 65510, 0, 7, 65511, 0, 8, 65513, 0, 9, 65514, 0, 6, 65514, 0, 7, 65515, 0, 8, 65518, 0, 10, 65517, 0, 10, 65516, 0, 4, 65512, 0, 5, 65512, 0, 4, 65513, 1441792, 6, 65513, 1441792, 5, 65513, 1441792, 4, 65514, 1441792, 4, 65515, 1441792, 2, 65528, 1441792, 4, 65505, 0, 4, 65504, 0, 5, 65504, 0, 6, 65504, 0, 7, 65504, 0, 7, 65503, 0, 8, 65503, 0, 8, 65502, 0, 9, 65502, 0, 10, 65502, 0, 10, 65501, 0, 9, 65501, 0, 10, 65500, 0, 4, 65506, 0, 4, 65507, 0, 5, 65506, 0, 5, 65505, 0)
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground" unique_id=1623775769]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.900391, -0.00049999356, -29.641815)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.760864, -0.00049999356, -29.641815)
 shape = SubResource("BoxShape3D_bhunq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ground" unique_id=1767320625]
@@ -2555,16 +2565,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.062294, 0, 69.89096)
 transform = Transform3D(-0.0244236, 0, -0.9997017, 0, 1, 0, 0.9997017, 0, -0.0244236, -47.29764, 0, -6.984276)
 
 [node name="DeadTreePack2" parent="forest/DeadTreePack2/DeadTreePack9" unique_id=12972267 instance=ExtResource("7_71dqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8519402, 0, 18.850054)
-
-[node name="DeadTreePack3" parent="forest/DeadTreePack2/DeadTreePack9" unique_id=1635351921 instance=ExtResource("7_71dqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.291336, 0, 36.835327)
-
-[node name="DeadTreePack4" parent="forest/DeadTreePack2/DeadTreePack9" unique_id=1081114886 instance=ExtResource("7_71dqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8660278, 0, 52.230705)
-
-[node name="DeadTreePack5" parent="forest/DeadTreePack2/DeadTreePack9" unique_id=472181060 instance=ExtResource("7_71dqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.062294, 0, 69.89096)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6631584, 0, 11.122871)
 
 [node name="DeadTreePack4" parent="forest" unique_id=1331139502 instance=ExtResource("7_71dqt")]
 transform = Transform3D(-0.0244236, 0, -0.9997017, 0, 1, 0, 0.9997017, 0, -0.0244236, 63.233, 0, 20.369637)
@@ -2614,38 +2615,20 @@ transform = Transform3D(-0.0244236, 0, -0.9997017, 0, 1, 0, 0.9997017, 0, -0.024
 [node name="DeadTreePack2" parent="forest/DeadTreePack6" unique_id=1302883685 instance=ExtResource("7_71dqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8519402, 0, 18.850054)
 
-[node name="DeadTreePack3" parent="forest/DeadTreePack6" unique_id=1270424766 instance=ExtResource("7_71dqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.291336, 0, 36.835327)
-
-[node name="DeadTreePack4" parent="forest/DeadTreePack6" unique_id=1564740374 instance=ExtResource("7_71dqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8660278, 0, 52.230705)
-
-[node name="DeadTreePack5" parent="forest/DeadTreePack6" unique_id=100212924 instance=ExtResource("7_71dqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.062294, 0, 69.89096)
-
 [node name="DeadTreePack7" parent="forest/DeadTreePack6" unique_id=1320281476 instance=ExtResource("7_71dqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.299568, 0.68959236, 11.693436)
 
 [node name="DeadTreePack2" parent="forest/DeadTreePack6/DeadTreePack7" unique_id=442831790 instance=ExtResource("7_71dqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8519402, 0, 18.850054)
-
-[node name="DeadTreePack3" parent="forest/DeadTreePack6/DeadTreePack7" unique_id=1475243497 instance=ExtResource("7_71dqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.291336, 0, 36.835327)
-
-[node name="DeadTreePack4" parent="forest/DeadTreePack6/DeadTreePack7" unique_id=145863781 instance=ExtResource("7_71dqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8660278, 0, 52.230705)
-
-[node name="DeadTreePack5" parent="forest/DeadTreePack6/DeadTreePack7" unique_id=808271165 instance=ExtResource("7_71dqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.062294, 0, 69.89096)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4883423, 0, 3.967373)
 
 [node name="exit" type="Node3D" parent="." unique_id=147482883]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0216446, 0, -59.54064)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.579573, 0, -68.39731)
 script = ExtResource("8_4gngc")
 
 [node name="exit area" type="Area3D" parent="exit" unique_id=1162639187]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="exit/exit area" unique_id=885760262]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.761673, 2.2026367, -2.1753216)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05880928, 2.2026367, -1.2075043)
 shape = SubResource("BoxShape3D_6f8o3")
 
 [node name="celtic_cross_model" parent="." unique_id=1946456857 instance=ExtResource("9_k2ng3")]
@@ -2655,11 +2638,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.443563, 0, 0.21909904)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.501378, 0, -30.993174)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="antidibil" unique_id=1138537550]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8769226, -0.5854564, -32.84134)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6512299, -0.5854564, -41.86754)
 shape = SubResource("BoxShape3D_qr0ht")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="antidibil" unique_id=1686904106]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.300392, 1.187561, 25.343372)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.300392, 1.187561, 7.2757587)
 shape = SubResource("BoxShape3D_1esiv")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="antidibil" unique_id=1462418496]
@@ -2722,6 +2705,15 @@ mesh = SubResource("CapsuleMesh_bhunq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.042881012, 0.5318818, -1.0889893)
 material_override = SubResource("StandardMaterial3D_ug83y")
 mesh = SubResource("BoxMesh_6f8o3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1330704322]
+transform = Transform3D(-1.6763541e-06, 0, -9.360156, 0, 1, 0, 38.350513, 0, -4.0914543e-07, 19.718723, -3.389236, -90.5796)
+mesh = SubResource("BoxMesh_qr0ht")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1183051703]
+transform = Transform3D(38.350513, 0, 0, 0, 1, 0, 0, 0, 19.891855, 9.121616, -4.6326485, -88.78321)
+material_override = SubResource("StandardMaterial3D_rayba")
+mesh = SubResource("PlaneMesh_bhunq")
 
 [connection signal="body_entered" from="exit/exit area" to="exit" method="_on_exit_area_body_entered"]
 [connection signal="body_exited" from="exit/exit area" to="exit" method="_on_exit_area_body_exited"]

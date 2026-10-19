@@ -1,0 +1,291 @@
+[gd_scene format=3 uid="uid://dqx3hcdexbywm"]
+
+[ext_resource type="Shader" uid="uid://b6fbv588wtitr" path="res://addons/psx_shader/shaders/psx_screen.gdshader" id="1_pma7v"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://PlayerCharacter/player_character_scene.tscn" id="1_rvng1"]
+[ext_resource type="LabelSettings" uid="uid://bs0stms0b56kp" path="res://PlayerCharacter/HUD/label_settings.tres" id="2_0qwf3"]
+[ext_resource type="Material" uid="uid://cmlreoo2qwhp4" path="res://Map/Materials/floor_structure_material.tres" id="4_0qwf3"]
+[ext_resource type="Material" uid="uid://3ub3li5nvjsw" path="res://Map/Materials/not_floor_structure_material.tres" id="5_ogsfn"]
+[ext_resource type="Script" uid="uid://beap8bey1068h" path="res://scripts/phone.gd" id="6_eeuis"]
+[ext_resource type="Texture2D" uid="uid://yy78uj0k1ijc" path="res://addons/psx_shader/assets/gold.png" id="6_yi8vw"]
+[ext_resource type="Script" uid="uid://dd3tyywp5nobl" path="res://scripts/calling.gd" id="8_2iuxu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ogsfn"]
+shader = ExtResource("1_pma7v")
+shader_parameter/grayscale = 0.11999999731776
+shader_parameter/screen_amount = 1.0
+shader_parameter/screen_pixel_size = 4.5
+shader_parameter/screen_color_bits = 5
+shader_parameter/screen_dither = 1.0
+shader_parameter/grain = 0.03999999910592
+shader_parameter/vignette = 0.28999999351792
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_riqys"]
+size = Vector3(43, 0.001, 43)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bhunq"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_bhunq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sn0t7"]
+size = Vector3(21.6, 4.8, 0.4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+size = Vector3(1, 1, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eeuis"]
+albedo_texture = ExtResource("6_yi8vw")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bhunq"]
+radius = 0.2
+height = 0.675
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
+radius = 2.3127356
+
+[sub_resource type="BoxMesh" id="BoxMesh_riqys"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6f8o3"]
+size = Vector3(1.855957, 2.914795, 1.8911743)
+
+[node name="home" type="Node3D" unique_id=775893986]
+
+[node name="PlayerCharacter" parent="." unique_id=1631114635 instance=ExtResource("1_rvng1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 17.506039, 1.2539444, -18.43968)
+
+[node name="psx effect" type="CanvasLayer" parent="." unique_id=929468458]
+
+[node name="ColorRect" type="ColorRect" parent="psx effect" unique_id=21442281]
+material = SubResource("ShaderMaterial_ogsfn")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(49.2, 27.56)
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="call_trigger_ntf" type="Label" parent="psx effect" unique_id=1860815451]
+visible = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = 19.0
+offset_right = -21.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.2, 2.2)
+theme_override_font_sizes/font_size = 40
+text = "Someone is calling..."
+label_settings = ExtResource("2_0qwf3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="talk_ntf" type="Label" parent="psx effect" unique_id=283933063]
+visible = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = 28.0
+offset_right = -6.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.2, 2.2)
+theme_override_font_sizes/font_size = 40
+text = "Talk : E"
+label_settings = ExtResource("2_0qwf3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="go_home_ntf" type="Label" parent="psx effect" unique_id=1606501640]
+visible = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = 22.0
+offset_right = -6.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.2, 2.2)
+theme_override_font_sizes/font_size = 40
+text = "Go home : E"
+label_settings = ExtResource("2_0qwf3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="floor" type="Node3D" parent="." unique_id=1273417498]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor" unique_id=75388269]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D" unique_id=614872787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00049999356, -0.3000002)
+shape = SubResource("BoxShape3D_riqys")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=1670320677]
+transform = Transform3D(21, 0, 0, 0, 1, 0, 0, 0, 21, 0, 0, 0)
+material_override = ExtResource("4_0qwf3")
+mesh = SubResource("PlaneMesh_bhunq")
+metadata/_edit_lock_ = true
+
+[node name="walls" type="Node3D" parent="." unique_id=469163058]
+
+[node name="1" type="StaticBody3D" parent="walls" unique_id=110143117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.2, 0, -20)
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls/1" unique_id=1115874966]
+transform = Transform3D(21.547497, 0, 0, 0, 4.65696, 0, 0, 0, 1, 0, 2.4, 0)
+material_override = ExtResource("5_ogsfn")
+mesh = SubResource("QuadMesh_bhunq")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/1" unique_id=1791043734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, 1.9000001, -0.20050049)
+shape = SubResource("BoxShape3D_sn0t7")
+metadata/_edit_lock_ = true
+
+[node name="5" type="StaticBody3D" parent="walls" unique_id=1982863282]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.2, 0, -3.2737317)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls/5" unique_id=1557183081]
+transform = Transform3D(21.547497, 0, 0, 0, 4.65696, 0, 0, 0, 1, 0, 2.4, 0)
+material_override = ExtResource("5_ogsfn")
+mesh = SubResource("QuadMesh_bhunq")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/5" unique_id=509255789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, 1.9000001, -0.20050049)
+shape = SubResource("BoxShape3D_sn0t7")
+metadata/_edit_lock_ = true
+
+[node name="2" type="StaticBody3D" parent="walls" unique_id=28193679]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20, 0, -9.9)
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls/2" unique_id=2046036089]
+transform = Transform3D(21.547497, 0, 0, 0, 4.65696, 0, 0, 0, 1, 0, 2.4, 0)
+material_override = ExtResource("5_ogsfn")
+mesh = SubResource("QuadMesh_bhunq")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/2" unique_id=208459438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9000001, -0.20050049)
+shape = SubResource("BoxShape3D_sn0t7")
+metadata/_edit_lock_ = true
+
+[node name="6" type="StaticBody3D" parent="walls" unique_id=1327719958]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 7.466646, 0, -9.9)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls/6" unique_id=188012081]
+transform = Transform3D(21.547497, 0, 0, 0, 4.65696, 0, 0, 0, 1, 0, 2.4, 0)
+material_override = ExtResource("5_ogsfn")
+mesh = SubResource("QuadMesh_bhunq")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/6" unique_id=1488974251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9000001, -0.20050049)
+shape = SubResource("BoxShape3D_sn0t7")
+metadata/_edit_lock_ = true
+
+[node name="3" type="StaticBody3D" parent="walls" unique_id=1294687179]
+transform = Transform3D(-1.8445135e-08, 0, -1, 0, 1, 0, 0.4219755, 0, -4.371139e-08, 15.548539, 0, -15.971929)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls/3" unique_id=359481729]
+transform = Transform3D(21.547497, 0, 0, 0, 4.65696, 0, 0, 0, 1, 0, 2.4, 0)
+material_override = ExtResource("5_ogsfn")
+mesh = SubResource("BoxMesh_bhunq")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/3" unique_id=1705357370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9000001, 4.7683716e-07)
+shape = SubResource("BoxShape3D_sn0t7")
+metadata/_edit_lock_ = true
+
+[node name="7" type="StaticBody3D" parent="walls" unique_id=2059556787]
+transform = Transform3D(0.103966884, 0, 0, 0, 1, 0, 0, 0, 1, 15.119445, 0, -6.9719286)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls/7" unique_id=1083760759]
+transform = Transform3D(21.547497, 0, 0, 0, 4.65696, 0, 0, 0, 1, 0, 2.4, 0)
+material_override = ExtResource("5_ogsfn")
+mesh = SubResource("BoxMesh_bhunq")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/7" unique_id=643344303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9000001, 4.7683716e-07)
+shape = SubResource("BoxShape3D_sn0t7")
+metadata/_edit_lock_ = true
+
+[node name="8" type="StaticBody3D" parent="walls" unique_id=857179585]
+transform = Transform3D(0.109324105, 0, 0, 0, 1, 0, 0, 0, 1, 19.287607, 0, -6.9719286)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls/8" unique_id=1477747667]
+transform = Transform3D(21.547497, 0, 0, 0, 4.65696, 0, 0, 0, 1, 0, 2.4, 0)
+material_override = ExtResource("5_ogsfn")
+mesh = SubResource("BoxMesh_bhunq")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/8" unique_id=116290060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9000001, 4.7683716e-07)
+shape = SubResource("BoxShape3D_sn0t7")
+metadata/_edit_lock_ = true
+
+[node name="4" type="StaticBody3D" parent="walls" unique_id=196608555]
+transform = Transform3D(-1.8445135e-08, 0, -1, 0, 1, 0, 0.4219755, 0, -4.371139e-08, 15.554941, 0, -4.275172)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls/4" unique_id=1650142666]
+transform = Transform3D(21.547497, 0, 0, 0, 4.65696, 0, 0, 0, 1, 0, 2.4, 0)
+material_override = ExtResource("5_ogsfn")
+mesh = SubResource("BoxMesh_bhunq")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls/4" unique_id=190548198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9000001, 4.7683716e-07)
+shape = SubResource("BoxShape3D_sn0t7")
+metadata/_edit_lock_ = true
+
+[node name="phone" type="Node3D" parent="." unique_id=801192019 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.521906, 1.3, -4.4576674)
+script = ExtResource("6_eeuis")
+target = NodePath("../PlayerCharacter")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="phone" unique_id=48355282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.087500095, 0)
+material_override = SubResource("StandardMaterial3D_eeuis")
+mesh = SubResource("CapsuleMesh_bhunq")
+
+[node name="Area3D" type="Area3D" parent="phone" unique_id=1184198672]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="phone/Area3D" unique_id=329383787]
+shape = SubResource("SphereShape3D_bhunq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=313490789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.521906, 0.5, -4.4576674)
+mesh = SubResource("BoxMesh_riqys")
+
+[node name="call_trigger" type="Area3D" parent="." unique_id=2070425170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.739645, 0, -10.379135)
+script = ExtResource("8_2iuxu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="call_trigger" unique_id=1991240445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42797852, 0.95739746, 0.21859741)
+shape = SubResource("BoxShape3D_6f8o3")
+
+[connection signal="body_entered" from="phone/Area3D" to="phone" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="phone/Area3D" to="phone" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="call_trigger" to="call_trigger" method="_on_body_entered"]
+[connection signal="body_exited" from="call_trigger" to="call_trigger" method="_on_body_exited"]
